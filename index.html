@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff; /* Optional: background color for better visibility */
+        }
+
+        h1 {
+            color: #323232;
+            font-family: 'DM Sans';
+            font-size: 32px;
+            margin: 0 0 10px 0;
+            width: 500px;
+            text-align: left;
+        }
+        
+        h2 {
+            color: #001489;
+            font-family: 'DM Sans';
+            font-size: 32px;
+            text-align: center; /* Center align the text */
+            margin: 0;
+            width: 100%; /* Make h2 take the full width of the container */
+            padding: 0 20px; /* Optional: add padding for better alignment */
+            opacity: 0; /* Initial opacity for the fade-in effect */
+            animation: fadeIn 1s ease-in-out 1.5s forwards; /* Fade-in animation with delay */
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .crop {
+            width: 500px; /* Set the width of the cropped area */
+            height: 327px; /* Set the height of the cropped area */
+            overflow: hidden; /* Hide content that overflows the container */
+            border-radius: 7px;
+            display: flex; /* Use Flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            position: relative; /* Make it a containing block for absolutely positioned elements */
+            background: white; /* Optional: background color for better visibility */
+        }
+        
+        .overlay-heading { 
+            position: absolute;
+            top: 50%;
+            left: -20;
+            transform: translate(0, -50%);
+            font-size: 2em;
+            z-index: 100; 
+            line-height: 1;   
+            text-align: center;
+            padding-left: 0px; /* Optional: add padding for better alignment */
+        }
+        
+        .offercard {
+            position: relative;
+            width: 500px;
+            height: 500px; /* This is the same height as the Lottie animation to center it properly */
+        }
+    </style>
+</head>
+<body>
+    <h1>LOYALTY REWARD OFFER</h1>
+    <div class="crop">
+        <div class="offercard">
+            <h2 class="overlay-heading">SAVE AN EXTRA 25% <br>ON YOUR NEXT YEAR.</h2>
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://lottie.host/1b81659f-6dd8-4ba0-84b5-7722948561d5/VmkoIDK9rg.json" background="transparent" speed="1" style="width: 500px; height: 500px" direction="1" mode="normal" autoplay></lottie-player>
+        </div>
+    </div>
+</body>
+</html>
